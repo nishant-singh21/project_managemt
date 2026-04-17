@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class parent(models.Model):
+class Parent(models.Model):
     father_name = models.CharField(max_length=100)
     father_occupations = models.CharField(max_length=1000)
     father_mobile = models.CharField(max_length=100)
@@ -29,7 +29,7 @@ class Student(models.Model):
     admission_number = models.CharField(max_length=200)
     section = models.CharField(max_length = 15)
     student_img = models.ImageField(upload_to='student/' , blank = True)
-    parent = models.OneToOneField(parent, on_delete=models.CASCADE)
+    parent = models.OneToOneField(  Parent, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=100, unique=True)
 
 
